@@ -56,5 +56,5 @@ Try:
 Problem: I'm getting weird error XYZ!
 
 Try:
-1. Cancel `npm run dev` (with ctrl-C on windows with control+C on MacOs) and run it again
+1. Cancel `npm start dev` (with ctrl-C on windows with control+C on MacOs) and run it again
 2. If there error mentions any particular file, visit that file and make sure you didn't make any common errors (capitalization of property names, forgetting to destructure paramaters with curly brackets)
