@@ -37,7 +37,6 @@ export default class PageController implements IPageController {
             return links.map(link => link.getAttribute("href"));
         });
 
-        console.log("typeof(amazonBookLink", typeof (amazonBookLink));
         return Promise.resolve(amazonBookLink);
     }
 
