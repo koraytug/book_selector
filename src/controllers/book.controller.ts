@@ -26,10 +26,7 @@ export default class BookController implements IBookController {
                 });
 
                 rl.on("close", async () => {
-                // console.log("\nBYE BYE !!!");
                     console.log(`Category number: ${selectedCategoryIndex} selected!`);
-                    // process.exit(0);
-                    // browserInstance = await startBrowser();
                     return resolve(selectedCategoryIndex);
                 });
             });
@@ -38,7 +35,7 @@ export default class BookController implements IBookController {
         }
     }
 
-    public chooseRandomBook(min, max):number {
+    public chooseRandomBook(min: number, max: number):number {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
@@ -74,7 +71,6 @@ export default class BookController implements IBookController {
 
             const amazonBookLinkObject: object =
         await pageController.getAmazonBookLink(bookLinks[randomBookIndex], browserInstance, pageController);
-
             await browserInstance.close();
             return Promise.resolve(amazonBookLinkObject);
         } catch (error) {

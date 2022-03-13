@@ -11,7 +11,7 @@ writing an application or a script
 after cloning the repository please install packages vith npm or yarn
 for cloning the repo you can use git clone command
 ```
-git clone git@github.com:............
+git clone git@github.com:koraytug/book_selector.git
 ```
 
 For the instalations on the terminal window in the project directory run

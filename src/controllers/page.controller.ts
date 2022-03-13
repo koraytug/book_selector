@@ -2,18 +2,6 @@ import {IPageController} from "./ipage.controller";
 import puppeteer from "puppeteer";
 
 export default class PageController implements IPageController {
-    // private scraperObject = {
-
-    //     scraper: async function(browser: puppeteer.Browser) {
-    //         const page = await browser.newPage();
-    //         console.log(`Navigating to ${this.url}...`, {
-    //             waitUntil: "domcontentloaded"
-    //         });
-    //         await page.goto(this.url);
-
-    //     }
-    // };
-
     public async scrapeAll(browserInstance: puppeteer.Browser, url: string): Promise<puppeteer.Page> {
         try {
             return await this.scraper(browserInstance, url);
@@ -31,12 +19,8 @@ export default class PageController implements IPageController {
     }
 
     public async getBooksInCategory(page: puppeteer.Page) {
-        // const results = [];
         const bookLinks = await page.$$eval(".tooltipTrigger > a", links => { return links.map(link => link.getAttribute("href"))});
         return bookLinks;
-        // console.log("categoriesNames", categoriesNames);
-        // categoriesNames.forEach(name => results.push({category: name}));
-        // return results;
     }
 
     public async getCategoriesLinks(page: puppeteer.Page) {
@@ -86,7 +70,6 @@ export default class PageController implements IPageController {
         });
         await page.goto(url);
         return page;
-
     };
 
 }

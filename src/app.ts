@@ -24,6 +24,7 @@ async function chooseABook() {
     } catch (error) {
         console.log("Something went Wrong, Please try it again!");
         console.log("Error message:", error);
+        process.exit(0);
     }
 
 
