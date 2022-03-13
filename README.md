@@ -22,7 +22,7 @@ npm install
 After installation for running application  
 
 ```
-npm run dev
+npm start dev
 ```
 OR you can use
 ```

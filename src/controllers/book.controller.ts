@@ -62,7 +62,7 @@ export default class BookController implements IBookController {
             const selectedCategoryIndex = await bookController.askwhichCategory();
             console.log("selectedCategoryIndex", selectedCategoryIndex);
 
-            url = `https://www.goodreads.com${categoriesLinks[selectedCategoryIndex + 1]}`;
+            url = `https://www.goodreads.com${categoriesLinks[selectedCategoryIndex -1]}`;
             page = await pageController.scrapeAll(browserInstance, url);
 
             const bookLinks = await pageController.getBooksInCategory(page);
