@@ -18,16 +18,14 @@ async function chooseABook() {
         const amazonBookLink: string = `https://www.goodreads.com${amazonBookLinkObject}`;
         const bookPage: puppeteer.Page = await pageController.openAmazonBookPage(userBrowserInstance, amazonBookLink);
 
-        await pageController.clickAddToChart(bookPage);
+        await pageController.clickAddToCart(bookPage);
 
-        await pageController.verifyAddToChartProcess(bookPage);
+        await pageController.verifyAddToCartProcess(bookPage);
     } catch (error) {
         console.log("Something went Wrong, Please try it again!");
         console.log("Error message:", error);
         process.exit(0);
     }
-
-
 }
 
 chooseABook();

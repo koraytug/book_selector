@@ -39,7 +39,7 @@ please select enter category number!:
 
 
 ## OUTPUT
-end of the process propts user the message below and will open a browser window which one shows amazon shoping chart with the chosen book.
+end of the process propts user the message below and will open a browser window which one shows amazon shoping cart with the chosen book.
 
 ```
 Item is not added to cart

@@ -2,12 +2,12 @@ import puppeteer from "puppeteer";
 
 export interface IPageController {
     scrapeAll(browserInstance: puppeteer.Browser, url: string): Promise<puppeteer.Page> ;
-    getCategoryNames(page: puppeteer.Page);
-    getBooksInCategory(page: puppeteer.Page);
-    getCategoriesLinks(page: puppeteer.Page);
+    getCategoryNames(page: puppeteer.Page): Promise<string[]>;
+    getBooksInCategory(page: puppeteer.Page): Promise<string[]>;
+    getCategoriesLinks(page: puppeteer.Page): Promise<string[]>;
     getAmazonBookLink(bookLink: string, browserInstance:puppeteer.Browser,
-        customerController:IPageController):Promise<object>;
+        customerController:IPageController):Promise<string[]>;
     openAmazonBookPage(browserInstance: puppeteer.Browser, url: string): Promise<puppeteer.Page>;
-    clickAddToChart(bookPage: puppeteer.Page): Promise<void>;
-    verifyAddToChartProcess(bookPage: puppeteer.Page): Promise<void>;
+    clickAddToCart(bookPage: puppeteer.Page): Promise<void>;
+    verifyAddToCartProcess(bookPage: puppeteer.Page): Promise<void>;
 }
